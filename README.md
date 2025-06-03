@@ -33,10 +33,6 @@ A RESTful API for managing a library system, built with Spring Boot and MySQL.
 ### Local Development
 
 1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd library-management-system
-   ```
 
 2. Create a MySQL database:
    ```sql
