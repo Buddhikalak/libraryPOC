@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: ${MYSQL_URL:jdbc:mysql://mysql:3306/library_db?useSSL=false&allowPublicKeyRetrieval=true}
+    username: ${MYSQL_USER:library_user}
+    password: ${MYSQL_PASSWORD:library_password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+logging:
+  level:
+    root: INFO
+    com.library: INFO
+  file:
+    name: /var/log/library-management-system/application.log 

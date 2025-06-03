@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.library.service.BookServiceTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.796 s <<< FAILURE! -- in com.library.service.BookServiceTest
+com.library.service.BookServiceTest.returnBook_Success -- Time elapsed: 0.062 s <<< FAILURE!
+org.mockito.exceptions.verification.TooManyActualInvocations: 
+
+bookBorrowingRepository.findByBookIdAndReturnedAtIsNull(
+    1L
+);
+Wanted 1 time:
+-> at com.library.service.BookServiceTest.returnBook_Success(BookServiceTest.java:230)
+But was 2 times:
+-> at com.library.service.impl.BookServiceImpl.returnBook(BookServiceImpl.java:121)
+-> at com.library.service.impl.BookServiceImpl.mapToBookResponse(BookServiceImpl.java:134)
+
+
+	at com.library.service.BookServiceTest.returnBook_Success(BookServiceTest.java:230)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

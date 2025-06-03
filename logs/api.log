@@ -1,0 +1,35 @@
+2025-06-03 22:54:54.084 [http-nio-8080-exec-1] INFO  c.l.controller.BorrowerController - Received request to get all borrowers
+2025-06-03 22:54:54.230 [http-nio-8080-exec-1] INFO  c.l.controller.BorrowerController - Successfully retrieved 2 borrowers
+2025-06-03 23:37:05.447 [http-nio-8080-exec-3] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:37:05.513 [http-nio-8080-exec-3] INFO  c.library.controller.BookController - Successfully registered book with ID: 3
+2025-06-03 23:37:09.522 [http-nio-8080-exec-2] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:37:09.528 [http-nio-8080-exec-2] INFO  c.library.controller.BookController - Successfully registered book with ID: 4
+2025-06-03 23:37:11.665 [http-nio-8080-exec-8] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:37:11.681 [http-nio-8080-exec-8] INFO  c.library.controller.BookController - Successfully registered book with ID: 5
+2025-06-03 23:43:40.855 [http-nio-8080-exec-9] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:43:40.869 [http-nio-8080-exec-9] INFO  c.library.controller.BookController - Successfully registered book with ID: 6
+2025-06-03 23:43:42.931 [http-nio-8080-exec-1] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:43:42.942 [http-nio-8080-exec-1] INFO  c.library.controller.BookController - Successfully registered book with ID: 7
+2025-06-03 23:43:43.870 [http-nio-8080-exec-3] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:43:43.883 [http-nio-8080-exec-3] INFO  c.library.controller.BookController - Successfully registered book with ID: 8
+2025-06-03 23:43:44.642 [http-nio-8080-exec-2] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:43:44.646 [http-nio-8080-exec-2] INFO  c.library.controller.BookController - Successfully registered book with ID: 9
+2025-06-03 23:43:45.301 [http-nio-8080-exec-8] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:43:45.308 [http-nio-8080-exec-8] INFO  c.library.controller.BookController - Successfully registered book with ID: 10
+2025-06-03 23:43:46.103 [http-nio-8080-exec-5] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:43:46.119 [http-nio-8080-exec-5] INFO  c.library.controller.BookController - Successfully registered book with ID: 11
+2025-06-03 23:44:07.790 [http-nio-8080-exec-1] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)
+2025-06-03 23:44:23.512 [http-nio-8080-exec-2] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=112, title=111, author=111)
+2025-06-03 23:44:23.570 [http-nio-8080-exec-2] INFO  c.library.controller.BookController - Successfully registered book with ID: 12
+2025-06-03 23:44:58.712 [http-nio-8080-exec-3] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=ISBN-1, title=AFK, author=ZZZ)
+2025-06-03 23:44:58.733 [http-nio-8080-exec-3] INFO  c.library.controller.BookController - Successfully registered book with ID: 13
+2025-06-03 23:45:15.126 [http-nio-8080-exec-4] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=ISBN-2, title=AFK, author=ZZZ)
+2025-06-03 23:45:15.136 [http-nio-8080-exec-4] INFO  c.library.controller.BookController - Successfully registered book with ID: 14
+2025-06-03 23:45:45.349 [http-nio-8080-exec-5] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=ISBN-2, title=AFK, author=ZZZ)
+2025-06-03 23:45:45.372 [http-nio-8080-exec-5] INFO  c.library.controller.BookController - Successfully registered book with ID: 15
+2025-06-03 23:45:56.577 [http-nio-8080-exec-6] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=ISBN-2, title=AFK, author=ZZZ)
+2025-06-03 23:45:56.592 [http-nio-8080-exec-6] INFO  c.library.controller.BookController - Successfully registered book with ID: 16
+2025-06-03 23:46:15.644 [http-nio-8080-exec-7] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=ISBN-1, title=AFK, author=ZZZ)
+2025-06-03 23:46:15.661 [http-nio-8080-exec-7] INFO  c.library.controller.BookController - Successfully registered book with ID: 17
+2025-06-03 23:46:27.965 [http-nio-8080-exec-8] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=11, author=11)
+2025-06-03 23:46:41.774 [http-nio-8080-exec-9] INFO  c.library.controller.BookController - Received request to register new book: BookRequest(isbn=111, title=111, author=111)

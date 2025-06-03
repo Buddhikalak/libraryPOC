@@ -1,0 +1,61 @@
+-------------------------------------------------------------------------------
+Test set: com.library.service.BorrowerServiceTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 3, Errors: 1, Skipped: 0, Time elapsed: 0.071 s <<< FAILURE! -- in com.library.service.BorrowerServiceTest
+com.library.service.BorrowerServiceTest.updateBorrower_WithExistingEmail -- Time elapsed: 0.016 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <com.library.exception.LibraryException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at com.library.service.BorrowerServiceTest.updateBorrower_WithExistingEmail(BorrowerServiceTest.java:158)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: java.lang.NullPointerException: Cannot invoke "com.library.model.Borrower.getId()" because "borrower" is null
+	at com.library.service.impl.BorrowerServiceImpl.mapToBorrowerResponse(BorrowerServiceImpl.java:85)
+	at com.library.service.impl.BorrowerServiceImpl.updateBorrower(BorrowerServiceImpl.java:73)
+	at com.library.service.BorrowerServiceTest.lambda$updateBorrower_WithExistingEmail$4(BorrowerServiceTest.java:158)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+
+com.library.service.BorrowerServiceTest.deleteBorrower_NotFound -- Time elapsed: 0.009 s <<< FAILURE!
+Wanted but not invoked:
+borrowerRepository.findById(1L);
+-> at com.library.service.BorrowerServiceTest.deleteBorrower_NotFound(BorrowerServiceTest.java:136)
+
+However, there was exactly 1 interaction with this mock:
+borrowerRepository.existsById(1L);
+-> at com.library.service.impl.BorrowerServiceImpl.deleteBorrower(BorrowerServiceImpl.java:78)
+
+
+	at com.library.service.BorrowerServiceTest.deleteBorrower_NotFound(BorrowerServiceTest.java:136)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.library.service.BorrowerServiceTest.deleteBorrower_Success -- Time elapsed: 0.006 s <<< ERROR!
+com.library.exception.LibraryException: Borrower not found
+	at com.library.service.impl.BorrowerServiceImpl.deleteBorrower(BorrowerServiceImpl.java:79)
+	at com.library.service.BorrowerServiceTest.deleteBorrower_Success(BorrowerServiceTest.java:125)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.library.service.BorrowerServiceTest.registerBorrower_WithExistingEmail -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <com.library.exception.LibraryException> but was: <java.lang.NullPointerException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at com.library.service.BorrowerServiceTest.registerBorrower_WithExistingEmail(BorrowerServiceTest.java:144)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: java.lang.NullPointerException: Cannot invoke "com.library.model.Borrower.getId()" because "borrower" is null
+	at com.library.service.impl.BorrowerServiceImpl.mapToBorrowerResponse(BorrowerServiceImpl.java:85)
+	at com.library.service.impl.BorrowerServiceImpl.registerBorrower(BorrowerServiceImpl.java:40)
+	at com.library.service.BorrowerServiceTest.lambda$registerBorrower_WithExistingEmail$3(BorrowerServiceTest.java:144)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+

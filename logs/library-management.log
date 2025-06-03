@@ -1,0 +1,628 @@
+2025-06-03 22:52:10.787 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-06-03 22:52:10.836 [main] INFO  c.l.LibraryManagementApplication - Starting LibraryManagementApplication using Java 17.0.15 with PID 2976 (C:\Users\buddh\Desktop\job\New folder\target\classes started by buddh in C:\Users\buddh\Desktop\job\New folder)
+2025-06-03 22:52:10.838 [main] INFO  c.l.LibraryManagementApplication - The following 1 profile is active: "dev"
+2025-06-03 22:52:12.019 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-03 22:52:12.096 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67 ms. Found 3 JPA repository interfaces.
+2025-06-03 22:52:12.841 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-03 22:52:12.850 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-03 22:52:12.853 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-03 22:52:12.853 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-06-03 22:52:12.916 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-06-03 22:52:12.917 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1998 ms
+2025-06-03 22:52:13.137 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-03 22:52:13.222 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-03 22:52:13.286 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-03 22:52:13.601 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-03 22:52:13.652 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-03 22:52:13.861 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34cb0e49
+2025-06-03 22:52:13.863 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-03 22:52:13.879 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2025-06-03 22:52:13.892 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-03 22:52:14.634 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-03 22:52:15.197 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03 22:52:15.881 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-03 22:52:16.423 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-03 22:52:16.458 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-06-03 22:52:16.471 [main] INFO  c.l.LibraryManagementApplication - Started LibraryManagementApplication in 6.287 seconds (process running for 6.663)
+2025-06-03 22:54:54.053 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-03 22:54:54.053 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-03 22:54:54.054 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-03 22:54:54.191 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.email,
+        b1_0.name 
+    from
+        borrowers b1_0
+2025-06-03 22:54:54.217 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        borrowers b1_0 
+            on b1_0.id=bb1_0.borrower_id 
+    where
+        b1_0.id=?
+2025-06-03 22:54:54.225 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        borrowers b1_0 
+            on b1_0.id=bb1_0.borrower_id 
+    where
+        b1_0.id=?
+2025-06-03 23:36:45.108 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-06-03 23:36:45.172 [main] INFO  c.l.LibraryManagementApplication - Starting LibraryManagementApplication using Java 17.0.15 with PID 23948 (C:\Users\buddh\Desktop\job\New folder\target\classes started by buddh in C:\Users\buddh\Desktop\job\New folder)
+2025-06-03 23:36:45.174 [main] INFO  c.l.LibraryManagementApplication - The following 1 profile is active: "dev"
+2025-06-03 23:36:46.323 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-03 23:36:46.386 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2025-06-03 23:36:47.223 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-03 23:36:47.245 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-03 23:36:47.249 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-03 23:36:47.249 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-06-03 23:36:47.347 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-06-03 23:36:47.350 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2079 ms
+2025-06-03 23:36:47.568 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-03 23:36:47.664 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-03 23:36:47.747 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-03 23:36:48.114 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-03 23:36:48.166 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-03 23:36:48.364 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a667f44
+2025-06-03 23:36:48.367 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-03 23:36:48.388 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2025-06-03 23:36:48.405 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-03 23:36:49.268 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-03 23:36:49.874 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03 23:36:50.707 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-03 23:36:51.384 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-03 23:36:51.396 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-06-03 23:36:51.398 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03 23:36:51.401 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-03 23:36:51.413 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-03 23:36:51.436 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-03 23:36:51.479 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-06-03 23:36:53.952 [http-nio-8080-exec-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 496 ms
+2025-06-03 23:37:05.479 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:37:05.513 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:37:09.528 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:37:09.528 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:37:11.673 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:37:11.681 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:43:32.078 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-06-03 23:43:32.138 [main] INFO  c.l.LibraryManagementApplication - Starting LibraryManagementApplication using Java 17.0.15 with PID 26828 (C:\Users\buddh\Desktop\job\New folder\target\classes started by buddh in C:\Users\buddh\Desktop\job\New folder)
+2025-06-03 23:43:32.139 [main] INFO  c.l.LibraryManagementApplication - The following 1 profile is active: "dev"
+2025-06-03 23:43:33.313 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-03 23:43:33.384 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2025-06-03 23:43:34.045 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-03 23:43:34.055 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-03 23:43:34.057 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-03 23:43:34.058 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-06-03 23:43:34.123 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-06-03 23:43:34.125 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1901 ms
+2025-06-03 23:43:34.340 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-03 23:43:34.407 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-03 23:43:34.462 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-03 23:43:34.746 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-03 23:43:34.790 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-03 23:43:34.997 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5db9f51f
+2025-06-03 23:43:34.999 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-03 23:43:35.020 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2025-06-03 23:43:35.040 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-03 23:43:35.830 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-03 23:43:36.309 [main] DEBUG org.hibernate.SQL - 
+    alter table books 
+       drop index uk_book_isbn_title_author
+2025-06-03 23:43:36.314 [main] DEBUG org.hibernate.SQL - 
+    alter table books 
+       add constraint uk_book_isbn_title_author unique (isbn, title, author)
+2025-06-03 23:43:36.425 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03 23:43:37.237 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-03 23:43:37.836 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-03 23:43:37.845 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-06-03 23:43:37.847 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03 23:43:37.850 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-03 23:43:37.858 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-03 23:43:37.874 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-03 23:43:37.907 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-06-03 23:43:40.859 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:43:40.864 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:43:42.937 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:43:42.942 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:43:43.874 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:43:43.878 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:43:44.646 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:43:44.646 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:43:45.308 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:43:45.308 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:43:46.108 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:43:46.111 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:43:54.796 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03 23:43:54.800 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-03 23:43:54.805 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-03 23:43:59.117 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-06-03 23:43:59.173 [main] INFO  c.l.LibraryManagementApplication - Starting LibraryManagementApplication using Java 17.0.15 with PID 20404 (C:\Users\buddh\Desktop\job\New folder\target\classes started by buddh in C:\Users\buddh\Desktop\job\New folder)
+2025-06-03 23:43:59.175 [main] INFO  c.l.LibraryManagementApplication - The following 1 profile is active: "dev"
+2025-06-03 23:44:00.441 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-03 23:44:00.514 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2025-06-03 23:44:01.294 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-03 23:44:01.311 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-03 23:44:01.315 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-03 23:44:01.316 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-06-03 23:44:01.425 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-06-03 23:44:01.426 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2169 ms
+2025-06-03 23:44:01.657 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-03 23:44:01.744 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-03 23:44:01.814 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-03 23:44:02.160 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-03 23:44:02.208 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-03 23:44:02.387 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@14656be5
+2025-06-03 23:44:02.389 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-03 23:44:02.411 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2025-06-03 23:44:02.423 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-03 23:44:03.231 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-03 23:44:03.576 [main] DEBUG org.hibernate.SQL - 
+    alter table books 
+       drop index uk_book_isbn_title_author
+2025-06-03 23:44:03.580 [main] DEBUG org.hibernate.SQL - 
+    alter table books 
+       add constraint uk_book_isbn_title_author unique (isbn, title, author)
+2025-06-03 23:44:03.680 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-03 23:44:04.458 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-03 23:44:04.971 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-03 23:44:05.000 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-06-03 23:44:05.011 [main] INFO  c.l.LibraryManagementApplication - Started LibraryManagementApplication in 6.458 seconds (process running for 6.824)
+2025-06-03 23:44:07.668 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-03 23:44:07.669 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-03 23:44:07.670 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-03 23:44:07.894 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
+2025-06-03 23:44:23.515 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
+2025-06-03 23:44:23.544 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:44:23.563 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:44:58.720 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
+2025-06-03 23:44:58.720 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:44:58.726 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:45:15.129 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
+2025-06-03 23:45:15.129 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:45:15.129 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:45:45.358 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
+2025-06-03 23:45:45.358 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:45:45.358 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:45:56.585 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
+2025-06-03 23:45:56.588 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:45:56.588 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:46:15.648 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
+2025-06-03 23:46:15.650 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        books
+        (author, available, isbn, title) 
+    values
+        (?, ?, ?, ?)
+2025-06-03 23:46:15.656 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        bb1_0.id,
+        bb1_0.book_id,
+        bb1_0.borrowed_at,
+        bb1_0.borrower_id,
+        bb1_0.returned_at 
+    from
+        book_borrowings bb1_0 
+    left join
+        books b1_0 
+            on b1_0.id=bb1_0.book_id 
+    where
+        b1_0.id=? 
+        and bb1_0.returned_at is null
+2025-06-03 23:46:27.965 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
+2025-06-03 23:46:41.778 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available,
+        b1_0.isbn,
+        b1_0.title 
+    from
+        books b1_0 
+    where
+        b1_0.isbn=?
